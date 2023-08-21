@@ -54,10 +54,39 @@ img {
   overflow: hidden;
 }
 
+/* Phone screen */
+
+.section {
+  padding: 0 16px;
+}
+
 .container {
-  max-width: 1158px;
+  min-width: 320px;
+  max-width: 428px;
   margin: 0 auto;
-  padding: 0 15px;
+
+  outline: 2px solid red;
+  outline-offset: -2px;
+
+  /* max-width: 1158px;
+  margin: 0 auto;
+  padding: 0 15px; */
+}
+
+/* Tablet screen */
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 736px;
+  }
+}
+
+/* Desktop screen */
+
+@media screen and (min-width: 1158px) {
+  .container {
+    max-width: 1128px;
+  }
 }
 
 /* Header */
@@ -201,39 +230,109 @@ img {
 }
 
 /* Section Information */
-.section-first {
-  padding: 120px 0;
+
+.information {
+  padding: 96px 0;
+  /* padding: 120px 0; */
 }
 
-.information-wrapper {
-  display: flex;
+@media only screen and (min-width: 1158px) {
+  .information {
+    padding: 120px 0;
+  }
+}
+
+.information-list-wrapper {
+  display: none;
+  /* display: flex;
   align-items: center;
   justify-content: center;
   height: 112px;
   background-color: var(--cloud-color);
   border-radius: 4px;
-  margin-bottom: 8px;
+  margin-bottom: 8px; */
+}
+@media only screen and (min-width: 1158px) {
+  .information-list-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 112px;
+    background-color: var(--cloud-color);
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
 }
 
-.information {
+.information-list {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  gap: 72px;
+  /* display: flex;
+  flex-wrap: wrap;
+  gap: 24px; */
 }
-.information-item {
-  width: calc((100% - 72px) / 4);
+
+@media only screen and (min-width: 768px) {
+  .information-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 72px;
+    column-gap: 24px;
+  }
 }
+/* .information-list-item {
+
+} */
+
+@media only screen and (min-width: 768px) {
+  .information-list-item {
+    width: calc((100% - 24px) / 2);
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .information-list-item {
+    width: calc((100% - 72px) / 4);
+  }
+}
+
 .information .title {
   color: var(--primary-text-color);
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.2;
-  letter-spacing: 0.02em;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: 0.72px;
   margin-bottom: 8px;
+  text-align: center;
 }
+
+@media only screen and (min-width: 768px) {
+  .information .title {
+    text-align: start;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .information .title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.4px;
+  }
+}
+
 .information .text {
   font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.32px;
+}
+
+@media only screen and (min-width: 1158px) {
+  .information .text {
+    font-weight: 400;
+  }
 }
 
 /* Section Work */
